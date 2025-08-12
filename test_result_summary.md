@@ -2,9 +2,13 @@
 
 | Feature         | Test Name                      | Status (SPIRV-LLVM-Translator) | Marked Status (SPIR-V Backend)    | Actual Status (SPIR-V Backend) | Test Error               | Test Error Details |
 |----------------|---------------------------------|--------------------------------|-----------------------------------|-------------------------------|---------------------------|-------------|
+| AddressCast | khr_dynamic_addrspace_cast.cpp               | Pass                           |  **XFAIL (CMPLRLLVM-64705)**    |Fail           | Program terminate abonormally  | ```error: command failed with exit status: 255``` |
+| AddressCast | dynamic_address_cast.cpp               | Pass                           |  **XFAIL (CMPLRLLVM-64705)**    |Fail           |  Program terminate abonormally | ```error: command failed with exit status: 255``` |
 | DeviceCodeSplit | grf.cpp               | Pass                           |  **UNSUPPORTED (CMPLRLLVM-64705)**   | **Pass**           |  | |
 | DeviceLib | imf/half_type_cast.cpp               | Pass                           |  XFAIL (CMPLRLLVM-64705)   |Fail            | Assertion fail | ```  half_type_cast.cpp.tmp1.out: /iusers/yixingzh/llvm/sycl/test-e2e/DeviceLib/imf/imf_utils.hpp:90: void test(sycl::queue &, std::initializer_list<InputTy>, std::initializer_list<OutputTy>, FuncTy, int) [InputTy = unsigned short, OutputTy = int, FuncTy = (lambda at /iusers/yixingzh/llvm/sycl/test-e2e/DeviceLib/imf/half_type_cast.cpp:40:10), EquTy = imf_utils_default_equ<int>]: Assertion `false' failed. ``` |
 | DeviceLib | imf/fp64_rounding_test.cpp               | Pass                           |  XFAIL (CMPLRLLVM-64705)   |Fail            | Undefined SPIR-V instruction | ``` error: undefined reference to `_Z17__spirv_IAddCarryll'  error: backend compiler failed build. ```|
+| KernelAndProgram | kernel-bundle-merge-options.cpp               | Pass                           |  Pass   |Pass           |  | |
+| KernelAndProgram | kernel-bundle-merge-options-env.cpp               | Pass                           |  Pass   |Pass           |  | |
 | MemorySanitizer | check_buffer_memset_memcpy.cpp | Pass                           | Unsupported (CMPLRLLVM-64052) | Fail            | `core dumped`   |  ```use-of-uninitialized-value use of size 8 at kernel <typeinfo name for check_memset(sycl::_V1::queue&)::{lambda(sycl::_V1::handler&)#2}::operator()(sycl::_V1::handler&) const::MyKernel1> LID(0, 0, 0) GID(0, 0, 0) #0 unsigned long sycl::_V1::accessor<int, 1, (sycl::_V1::access::mode)1026, (sycl::_V1::access::target)2014, (sycl::_V1::access::placeholder)0, sycl::_V1::ext::oneapi::accessor_property_list<>>::getLinearIndex<1>(sycl::_V1::id<1>) const /iusers/yixingzh/llvm/build/bin/../include/sycl/accessor.hpp:697 Aborted (core dumped) ```|
 | MemorySanitizer | check_device_global.cpp        | Pass                           |  Unsupported (CMPLRLLVM-64052)| Fail           |Memory out-of-bound | ```[kernel] Private shadow memory out-of-bound(ptr: 0xff00fffffffb0058 -> 0xff01000002b43048, sid: 0, base: 0xff00f0000166d010)```|
 | MemorySanitizer | check_usm.cpp                  | Pass                           |  Unsupported (CMPLRLLVM-64052)| Fail             | Memory out-of-bound |```[kernel] Private shadow memory out-of-bound(ptr: 0xff00fffffffe0000 -> 0xff010000027df7f0, sid: 0, base: 0xff00f00001000810)```|
@@ -23,9 +27,4 @@
 | syclcompat | group_utils/radix_sort.cpp               | Pass                           |  UNSUPPORTED (Tracker: https://github.com/intel/llvm/issues/17400)   |Fail           | Test Result incorrect |```test_sort failed -2116943464,-2113928704,-2113928704,-2113928704,-2144337914,-2113929196 ...... ``` |
 
 
-
-
-
-| Reduction | reduction_nd_N_vars.cpp               | Pass                           |  Pass   |Pass           |  | |
-| Reduction | reduction_nd_N_vars.cpp               | Pass                           |  Pass   |Pass           |  | |
 | Reduction | reduction_nd_N_vars.cpp               | Pass                           |  Pass   |Pass           |  | |
