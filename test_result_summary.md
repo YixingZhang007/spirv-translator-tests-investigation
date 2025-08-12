@@ -2,8 +2,8 @@
 
 | Feature         | Test Name                      | Status (SPIRV-LLVM-Translator) | Marked Status (SPIR-V Backend)    | Actual Status (SPIR-V Backend) | Test Error               | Test Error Details |
 |----------------|---------------------------------|--------------------------------|-----------------------------------|-------------------------------|---------------------------|-------------|
-| AddressCast | khr_dynamic_addrspace_cast.cpp               | Pass                           |  **XFAIL (CMPLRLLVM-64705)**    |Fail           | Program terminate abonormally  | ```error: command failed with exit status: 255``` |
-| AddressCast | dynamic_address_cast.cpp               | Pass                           |  **XFAIL (CMPLRLLVM-64705)**    |Fail           |  Program terminate abonormally | ```error: command failed with exit status: 255``` |
+| AddressCast | khr_dynamic_addrspace_cast.cpp               | Pass                           |  XFAIL (CMPLRLLVM-64705)    |Fail           | Program terminate abonormally  | ```error: command failed with exit status: 255``` |
+| AddressCast | dynamic_address_cast.cpp               | Pass                           |  XFAIL (CMPLRLLVM-64705)    |Fail           |  Program terminate abonormally | ```error: command failed with exit status: 255``` |
 | DeviceCodeSplit | grf.cpp               | Pass                           |  **UNSUPPORTED (CMPLRLLVM-64705)**   | **Pass**           |  | |
 | DeviceLib | imf/half_type_cast.cpp               | Pass                           |  XFAIL (CMPLRLLVM-64705)   |Fail            | Assertion fail | ```  half_type_cast.cpp.tmp1.out: /iusers/yixingzh/llvm/sycl/test-e2e/DeviceLib/imf/imf_utils.hpp:90: void test(sycl::queue &, std::initializer_list<InputTy>, std::initializer_list<OutputTy>, FuncTy, int) [InputTy = unsigned short, OutputTy = int, FuncTy = (lambda at /iusers/yixingzh/llvm/sycl/test-e2e/DeviceLib/imf/half_type_cast.cpp:40:10), EquTy = imf_utils_default_equ<int>]: Assertion `false' failed. ``` |
 | DeviceLib | imf/fp64_rounding_test.cpp               | Pass                           |  XFAIL (CMPLRLLVM-64705)   |Fail            | Undefined SPIR-V instruction | ``` error: undefined reference to `_Z17__spirv_IAddCarryll'  error: backend compiler failed build. ```|
@@ -25,6 +25,5 @@
 | SubGroup | sub_group_as.cpp               | Pass                           |  XFAIL (CMPLRLLVM-64705)   |Fail            |  Result not matched | ``` Unexpected result 0101 vs 0100 error: command failed with exit status: 1 ```|
 | syclcompat | launch/launch_policy_lmem.cpp              | Pass                           |  **UNSUPPORTED (CMPLRLLVM-64705)**   |**Pass**           |  | |
 | syclcompat | group_utils/radix_sort.cpp               | Pass                           |  UNSUPPORTED (Tracker: https://github.com/intel/llvm/issues/17400)   |Fail           | Test Result incorrect |```test_sort failed -2116943464,-2113928704,-2113928704,-2113928704,-2144337914,-2113929196 ...... ``` |
-
-
-| Reduction | reduction_nd_N_vars.cpp               | Pass                           |  Pass   |Pass           |  | |
+| USM | copy.cpp              | Pass                           |  **UNSUPPORTED**   | **Pass**           |  | |
+| USM | all 34 tests in memops2d/ | Pass                           |  **UNSUPPORTED**   | **Pass**           |  | |
