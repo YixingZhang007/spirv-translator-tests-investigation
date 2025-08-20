@@ -16,7 +16,7 @@ The results of SYCL E2E tests under different configurations are summarized belo
 2. **PVC with SPIR-V Backend**  
    - Results logged in: `PVC_spirv_backend.log`
 
-3. **Comparison Between SPIRV-LLVM-Translator and SPIR-V Backend**
+3. **Comparison of e2e-tests results between SPIRV-LLVM-Translator and SPIR-V Backend**
    - Summary available in : `pvc_test_result_summary.md`
 
 ---
@@ -25,7 +25,7 @@ The results of SYCL E2E tests under different configurations are summarized belo
 
 | Component              | Version                                                                                     | Project Link                          |
 |------------------------|---------------------------------------------------------------------------------------------|---------------------------------------|
-| SYCL                   | Git Commit: `b6a619ec00d740be5c340d447fb1f71cf75d653a`                                      | [intel/llvm](https://github.com/intel/llvm) |
+| SYCL                   | Git Commit: `b6a619ec00d740be5c340d447fb1f71cf75d653a`                                      | [intel/llvm -b sycl](https://github.com/intel/llvm) |
 | SPIRV-LLVM-Translator  | Default version included in the SYCL repository                                             |                                       |
 | SPIR-V Backend         | Default version included in the SYCL repository                                             |                                       |
 | PVC Driver (Level Zero)| `level_zero:gpu` - Intel® oneAPI Unified Runtime over Level-Zero, Max 1550, version `12.60.7 [1.6.34666+3]` | [QuickBuild Link](https://ubit-gfx.intel.com/build/22049244) |
