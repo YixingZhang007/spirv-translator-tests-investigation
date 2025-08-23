@@ -12,7 +12,7 @@ The results of SYCL E2E tests under different configurations are summarized belo
 
 | Platform | SPIRV-LLVM-Translator Log | SPIR-V Backend Log | Comparison of Results |
 |----------|---------------------------|------------------|---------------------|
-| PVC      | `PVC_spirv_llvm_translator.log` | `PVC_spirv_backend.log` | `pvc_test_result_summary.md` |
+| PVC      | `PVC_spirv_llvm_translator.log` | `PVC_spirv_backend.log` | `PVC_test_result_summary.md` |
 | DG2      | `DG2_spirv_llvm_translator.log` | `DG2_spirv_backend.log` | `DG2_test_result_summary.md` |
 | CPU      | `CPU_spirv_llvm_translator.log` | `CPU_spirv_backend.log` | `CPU_test_result_summary.md` |
 
