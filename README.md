@@ -25,7 +25,7 @@ The results of SYCL E2E tests under different configurations are summarized belo
 | SYCL                   | Git Commit: `b6a619ec00d740be5c340d447fb1f71cf75d653a`                                      | [intel/llvm -b sycl](https://github.com/intel/llvm) |
 | SPIRV-LLVM-Translator  | Default version included in the SYCL repository                                             |                                       |
 | SPIR-V Backend         | Default version included in the SYCL repository                                             |                                       |
-| Driver (Level Zero)    | `level_zero:gpu` - Intel® oneAPI Unified Runtime over Level-Zero, Max 1550, version `12.60.7 [1.6.34666+3]` | [QuickBuild Link](https://ubit-gfx.intel.com/build/22049244) |
+| Driver                 | `level_zero:gpu` - Intel® oneAPI Unified Runtime over Level-Zero, Max 1550, version `12.60.7 [1.6.34666+3]` | [QuickBuild Link](https://ubit-gfx.intel.com/build/22049244) |
 
 ---
 
